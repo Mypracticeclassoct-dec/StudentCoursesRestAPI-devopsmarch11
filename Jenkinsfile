@@ -17,8 +17,10 @@ pipeline {
         }
         stage('scan and push') {
             steps {
-                sh 'docker scan vamsibakka/spc2:latest'
-                sh 'docker image push vamsibakka/spc2:latest'
+                sh """
+                docker scan vamsibakka/spc2:latest
+                docker image push vamsibakka/spc2:latest
+                """
             }
         }
     }
